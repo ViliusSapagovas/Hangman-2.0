@@ -44,12 +44,12 @@ class Hangman():
             else: 
                 self.check_whole_word(guess)
 
-    def check_game_over(self) -> None:
+    def check_game_over(self) -> bool:
         if self.attempts == self.max_attempts or self.guesses == self.max_guesses:
             self.game_over = True
             return self.game_over
 
-    def check_game_won(self) -> None:
+    def check_game_won(self) -> bool:
         if set(self.correct_guesses) == set(self.secret_word):
             self.game_won = True
             return self.game_won
