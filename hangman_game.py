@@ -22,7 +22,7 @@ class Hangman():
             "attempts": self.attempts,
             "correct_guesses": self.correct_guesses,
             "incorrect_guesses": self.incorrect_guesses,
-            "game_status": self.get_game_status()
+            "game_state": self.game_state()
         }
     
 
@@ -52,7 +52,6 @@ class Hangman():
     def check_game_won(self) -> None:
         if set(self.correct_guesses) == set(self.secret_word):
             self.game_won = True
-        
             return self.game_won
 
     def get_masked_word(self) -> str:
